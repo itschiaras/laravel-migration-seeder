@@ -23,7 +23,7 @@ return new class extends Migration
             $table->smallInteger('code')->unsigned();
             $table->tinyInteger('coaches')->unsigned();
             $table->boolean('on_time')->default(1);
-            $table->boolean('canceled')->default(0);
+            $table->boolean('cancelled')->default(0);
             $table->timestamps();
         });
     }

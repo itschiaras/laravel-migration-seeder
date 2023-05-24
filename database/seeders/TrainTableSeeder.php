@@ -23,7 +23,7 @@ class TrainTableSeeder extends Seeder
                 'departure_time' => '7:00:00',
                 'arrival_time' => '8:00:00',
                 'on_time' => 1,
-                'canceled' => 0
+                'cancelled' => 0
             ],
             [
                 'company' => 'Italo',
@@ -32,7 +32,7 @@ class TrainTableSeeder extends Seeder
                 'departure_time' => '8:00:00',
                 'arrival_time' => '9:00:00',
                 'on_time' => 0,
-                'canceled' => 0
+                'cancelled' => 0
             ],
             [
                 'company' => 'Trenitalia',
@@ -41,7 +41,7 @@ class TrainTableSeeder extends Seeder
                 'departure_time' => '10:00:00',
                 'arrival_time' => '12:00:00',
                 'on_time' => 1,
-                'canceled' => 0
+                'cancelled' => 0
             ],
             [
                 'company' => 'Trenitalia',
@@ -50,7 +50,7 @@ class TrainTableSeeder extends Seeder
                 'departure_time' => '12:00:00',
                 'arrival_time' => '14:00:00',
                 'on_time' => 0,
-                'canceled' => 0
+                'cancelled' => 0
             ],
             [
                 'company' => 'Italo',
@@ -59,14 +59,14 @@ class TrainTableSeeder extends Seeder
                 'departure_time' => '7:00:00',
                 'arrival_time' => '8:00:00',
                 'on_time' => 1,
-                'canceled' => 1
+                'cancelled' => 1
             ]
 
             ];
 
             foreach ($trains as $train) {
                 $train['code'] = rand(1000, 9999);
-                $train['coaches'] = rand(1, 10);
+                $train['coaches'] = rand(5, 10);
                 $newTrain = new Train();
                 $newTrain->company = $train['company'];
                 $newTrain->departure_station = $train['departure_station'];
@@ -76,7 +76,7 @@ class TrainTableSeeder extends Seeder
                 $newTrain->code = $train['code'];
                 $newTrain->coaches = $train['coaches'];
                 $newTrain->on_time = $train['on_time'];
-                $newTrain->canceled = $train['canceled'];
+                $newTrain->cancelled = $train['cancelled'];
                 $newTrain->save();
             }
     }
